@@ -23,15 +23,19 @@
     </div>
     <div id= "my-account">
     <li><%= link_to "アカウント", user_path(current_user.id) %></li>
-    <div>
+    </div>
     <div id= "sign-out">
     <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
    </div>
 
     <% else %>
+    <div id= "sign-up">
       <li><%= link_to "アカウント登録", new_user_path %></li>
+     </div>
+     <div id= "sign-in">
       <li><%= link_to "ログイン", new_session_path %></li>
-    <% end %>
+    </div>
+      <% end %>
     <%= yield %>
   </body>
 </html>
